@@ -24,14 +24,6 @@ export enum ButtonColorVariable {
   ACTIVE_COLOR = 'active-color',
 }
 
-export const COLOR_VARIABLE_NAMES: readonly ButtonColorVariable[] = [
-  ButtonColorVariable.PRIMARY_COLOR,
-  ButtonColorVariable.BACKGROUND_COLOR,
-  ButtonColorVariable.HOVER_COLOR,
-  ButtonColorVariable.COUNT_COLOR,
-  ButtonColorVariable.ACTIVE_COLOR,
-]
-
 export interface ButtonElementAttributes {
   [ENTITY_ID_ATTRIBUTE_NAME]: string
   [LAYOUT_ATTRIBUTE_NAME]?: ButtonLayout
