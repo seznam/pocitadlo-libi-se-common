@@ -1,8 +1,10 @@
-export const ENTITY_ID_ATTRIBUTE_NAME = 'entity'
-export const LAYOUT_ATTRIBUTE_NAME = 'layout'
-export const SIZE_ATTRIBUTE_NAME = 'size'
-export const ANALYTICS_HIT_PAYLOAD_ATTRIBUTE_NAME = 'data-payload'
-export const ANALYTICS_HIT_BUTTON_POSITION_ATTRIBUTE_NAME = 'button-position'
+export enum ButtonElementAttributeName {
+  ENTITY_ID = 'entity',
+  LAYOUT = 'layout',
+  SIZE = 'size',
+  ANALYTICS_HIT_PAYLOAD = 'data-payload',
+  ANALYTICS_HIT_BUTTON_POSITION = 'button-position',
+}
 
 export enum ButtonLayout {
   SEAMLESS = 'seamless',
@@ -25,11 +27,11 @@ export enum ButtonColorVariable {
 }
 
 export interface ButtonElementAttributes {
-  [ENTITY_ID_ATTRIBUTE_NAME]: string
-  [LAYOUT_ATTRIBUTE_NAME]?: ButtonLayout
-  [SIZE_ATTRIBUTE_NAME]?: ButtonSize
-  [ANALYTICS_HIT_PAYLOAD_ATTRIBUTE_NAME]?: string
-  [ANALYTICS_HIT_PAYLOAD_ATTRIBUTE_NAME]?: string
+  [ButtonElementAttributeName.ENTITY_ID]: string
+  [ButtonElementAttributeName.LAYOUT]?: ButtonLayout
+  [ButtonElementAttributeName.SIZE]?: ButtonSize
+  [ButtonElementAttributeName.ANALYTICS_HIT_PAYLOAD]?: string
+  [ButtonElementAttributeName.ANALYTICS_HIT_BUTTON_POSITION]?: string
 }
 
 type JSON_serializable =
