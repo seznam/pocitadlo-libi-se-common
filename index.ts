@@ -1,3 +1,5 @@
+export const BUTTON_SCRIPT_URL = '//pocitadlolibise.seznam.cz/pocitadlolibise.js';
+
 export enum ButtonElementAttributeName {
   ENTITY_ID = 'entity',
   LAYOUT = 'layout',
