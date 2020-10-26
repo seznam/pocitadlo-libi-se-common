@@ -126,7 +126,7 @@ function validateAttributes(array $attributes): array {
       ButtonColorVariable::ACTIVE_COLOR
     ];
     if (
-      !is_array[$colors]
+      !is_array($colors)
       || !empty(array_filter($colors, function($key) { return !in_array($key, $colorNames, true); }, ARRAY_FILTER_USE_KEY))
       || !empty(array_filter($colors, function($color) { return is_string($color); }))
     ) {
