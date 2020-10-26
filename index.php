@@ -127,12 +127,16 @@ function validateAttributes(array $attributes): array {
     ];
     if (
       !is_array($colors)
-      || !empty(array_filter($colors, function($key) { return !in_array($key, $colorNames, true); }, ARRAY_FILTER_USE_KEY))
-      || !empty(array_filter($colors, function($color) { return is_string($color); }))
+      || !empty(array_filter(
+        $colors,
+        function($key) use ($colorNames) { return !in_array($key, $colorNames, true); },
+        ARRAY_FILTER_USE_KEY
+      ))
+      || !empty(array_filter($colors, function($color) { return !is_string($color); }))
     ) {
-      throw new Error("Found an invalid value for the colors configuration: ${attributes['colors']}");
+      throw new Error("Found an invalid value for the colors configuration: " . json_encode($attributes['colors']));
     }
-    $validatedAttributes = $attributes['colors'];
+    $validatedAttributes['colors'] = $attributes['colors'];
   }
 
   return $validatedAttributes;
