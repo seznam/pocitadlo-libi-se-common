@@ -49,8 +49,8 @@ function renderButton(array $attributes, $placeholder = ''): string {
   $colors = $preparedAttributes['colors'];
   unset($preparedAttributes['colors']);
   if (is_array($colors)) {
-    $colorStyles = array_map(function($colorName) {
-      return "--$colorName:${colors[$colorName]}";
+    $colorStyles = array_map(function($colorName) use ($colors) {
+      return "--$colorName:" . $colors[$colorName];
     }, array_keys($colors));
     $preparedAttributes['style'] = implode(';', $colorStyles);
   }
