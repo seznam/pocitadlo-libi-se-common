@@ -63,6 +63,10 @@ function renderButton(array $attributes, $placeholder = ''): string {
   return "<$buttonElementName$attributeList>${placeholder}</$buttonElementName>";
 }
 
+function renderButtonScript(): string {
+  return '<script src="' . htmlspecialchars(BUTTON_SCRIPT_URL, ENT_COMPAT | ENT_HTML5) . '" async></script>';
+}
+
 function validateAttributes(array $attributes): array {
   if (!isset($attributes[ButtonElementAttributeName::ENTITY_ID])) {
     throw new Error(
