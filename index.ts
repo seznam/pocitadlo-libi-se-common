@@ -107,5 +107,5 @@ type JSON_serializable =
   | boolean
   | number
   | string
-  | JSON_serializable[]
-  | {[property: string]: JSON_serializable}
+  | readonly JSON_serializable[]
+  | {readonly [property: string]: JSON_serializable}
