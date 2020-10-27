@@ -6,7 +6,10 @@
   "scripts": {
     "build": "rm -rf dist/ && npm run compile && cp LICENSE package.json pocitadlolibise.css README.md dist/",
     "compile": "tsc --project .",
-    "test": "eslint . --ext .ts"
+    "test": "eslint . --ext .ts",
+    "check-uncommitted": "git diff --exit-code >/dev/null && git diff --cached --exit-code >/dev/null",
+    "prepublishOnly": "echo 'Use npm run publish-package' && exit 1",
+    "publish-package": "npm run check-uncommitted && npm run build && git push && git push --tags && npm publish dist --ignore-scripts --access public"
   },
   "repository": {
     "type": "git",
