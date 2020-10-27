@@ -37,14 +37,6 @@ export interface ButtonElementAttributes {
   [ButtonElementAttributeName.ANALYTICS_HIT_BUTTON_POSITION]?: string
 }
 
-type JSON_serializable =
-  null
-  | boolean
-  | number
-  | string
-  | JSON_serializable[]
-  | {[property: string]: JSON_serializable}
-
 export interface ButtonComponentProperties {
   entity: string
   layout?: ButtonLayout
@@ -57,3 +49,11 @@ export interface ButtonComponentProperties {
     position?: string
   }
 }
+
+type JSON_serializable =
+  null
+  | boolean
+  | number
+  | string
+  | JSON_serializable[]
+  | {[property: string]: JSON_serializable}
