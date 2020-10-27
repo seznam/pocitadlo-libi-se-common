@@ -4,6 +4,8 @@
   "description": "Shared resources related to integration libraries for the \"Líbí se\" social plugin button by Seznam.cz.",
   "main": "index.js",
   "scripts": {
+    "build": "rm -rf dist/ && npm run compile && cp LICENSE package.json README.md dist/",
+    "compile": "tsc --project .",
     "test": "eslint . --ext .ts"
   },
   "repository": {
