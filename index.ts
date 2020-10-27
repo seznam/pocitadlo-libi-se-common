@@ -29,6 +29,58 @@ export enum ButtonColorVariable {
   ACTIVE_COLOR = 'active-color',
 }
 
+type LayoutDimensionsConfiguration = {
+  readonly [size in ButtonSize]: {
+    minWidth: number
+    height: number
+  }
+}
+
+export const BUTTON_DIMENSIONS: {readonly [layout in ButtonLayout]: LayoutDimensionsConfiguration} = {
+  [ButtonLayout.SEAMLESS]: {
+    [ButtonSize.MINIMALISTIC]: {
+      minWidth: 40,
+      height: 20,
+    },
+    [ButtonSize.SMALL]: {
+      minWidth: 100,
+      height: 20,
+    },
+    [ButtonSize.LARGE]: {
+      minWidth: 100,
+      height: 20,
+    },
+  },
+  [ButtonLayout.BUTTON_COUNT]: {
+    [ButtonSize.MINIMALISTIC]: {
+      minWidth: 40,
+      height: 20,
+    },
+    [ButtonSize.SMALL]: {
+      minWidth: 100,
+      height: 20,
+    },
+    [ButtonSize.LARGE]: {
+      minWidth: 100,
+      height: 28,
+    },
+  },
+  [ButtonLayout.BOX_COUNT]: {
+    [ButtonSize.MINIMALISTIC]: {
+      minWidth: 40,
+      height: 40,
+    },
+    [ButtonSize.SMALL]: {
+      minWidth: 100,
+      height: 40,
+    },
+    [ButtonSize.LARGE]: {
+      minWidth: 100,
+      height: 58,
+    },
+  },
+}
+
 export interface ButtonElementAttributes {
   [ButtonElementAttributeName.ENTITY_ID]: string
   [ButtonElementAttributeName.LAYOUT]?: ButtonLayout
