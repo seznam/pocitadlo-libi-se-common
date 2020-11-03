@@ -110,9 +110,10 @@ type JSON_serializable =
   | readonly JSON_serializable[]
   | {readonly [property: string]: JSON_serializable}
 
-export function createElementAttributes(componentProperties: ButtonComponentProperties): ButtonElementAttributes {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { analytics, colors, ...otherProperties } = componentProperties // Excluding the colors object from attributes
+export function createElementAttributes(
+  componentProperties: Omit<ButtonComponentProperties, 'colors'>,
+): ButtonElementAttributes {
+  const { analytics, ...otherProperties } = componentProperties
   const attributes: ButtonElementAttributes = otherProperties
   if (analytics) {
     if (analytics.payload !== undefined) {
