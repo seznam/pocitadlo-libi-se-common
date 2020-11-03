@@ -33,11 +33,11 @@ final class ButtonSize {
 }
 
 final class ButtonColorVariable {
-  const PRIMARY_COLOR = 'primary-color';
-  const BACKGROUND_COLOR = 'background-color';
-  const HOVER_COLOR = 'hover-color';
-  const COUNT_COLOR = 'count-color';
-  const ACTIVE_COLOR = 'active-color';
+  const PRIMARY_COLOR = '--primary-color';
+  const BACKGROUND_COLOR = '--background-color';
+  const HOVER_COLOR = '--hover-color';
+  const COUNT_COLOR = '--count-color';
+  const ACTIVE_COLOR = '--active-color';
 
   private function __construct() {}
 }
@@ -50,7 +50,7 @@ function renderButton(array $attributes, $placeholder = ''): string {
   unset($preparedAttributes['colors']);
   if (is_array($colors)) {
     $colorStyles = array_map(function($colorName) use ($colors) {
-      return "--$colorName:" . $colors[$colorName];
+      return "$colorName:" . $colors[$colorName];
     }, array_keys($colors));
     $preparedAttributes['style'] = implode(';', $colorStyles);
   }

@@ -22,11 +22,11 @@ export enum ButtonSize {
 }
 
 export enum ButtonColorVariable {
-  PRIMARY_COLOR = 'primary-color',
-  BACKGROUND_COLOR = 'background-color',
-  HOVER_COLOR = 'hover-color',
-  COUNT_COLOR = 'count-color',
-  ACTIVE_COLOR = 'active-color',
+  PRIMARY_COLOR = '--primary-color',
+  BACKGROUND_COLOR = '--background-color',
+  HOVER_COLOR = '--hover-color',
+  COUNT_COLOR = '--count-color',
+  ACTIVE_COLOR = '--active-color',
 }
 
 type LayoutDimensionsConfiguration = {
