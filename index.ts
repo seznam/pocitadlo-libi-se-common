@@ -90,15 +90,15 @@ export interface ButtonElementAttributes {
 }
 
 export interface ButtonComponentProperties {
-  entity: string
-  layout?: ButtonLayout
-  size?: ButtonSize
-  colors?: {
+  readonly entity: string
+  readonly layout?: ButtonLayout
+  readonly size?: ButtonSize
+  readonly colors?: {
     readonly [color in ButtonColorVariable]: string
   }
-  analytics?: {
-    payload?: JSON_serializable
-    position?: string
+  readonly analytics?: {
+    readonly payload?: JSON_serializable
+    readonly position?: string
   }
 }
 
