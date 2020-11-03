@@ -109,3 +109,19 @@ type JSON_serializable =
   | string
   | readonly JSON_serializable[]
   | {readonly [property: string]: JSON_serializable}
+
+export function createElementAttributes(componentProperties: ButtonComponentProperties): ButtonElementAttributes {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { analytics, colors, ...otherProperties } = componentProperties // Excluding the colors object from attributes
+  const attributes: ButtonElementAttributes = otherProperties
+  if (analytics) {
+    if (analytics.payload !== undefined) {
+      const serializedPayload = JSON.stringify(analytics.payload)
+      attributes[ButtonElementAttributeName.ANALYTICS_HIT_PAYLOAD] = serializedPayload
+    }
+    if (typeof analytics.position === 'string') {
+      attributes[ButtonElementAttributeName.ANALYTICS_HIT_BUTTON_POSITION] = analytics.position
+    }
+  }
+  return attributes
+}
