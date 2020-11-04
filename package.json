@@ -2,11 +2,18 @@
   "name": "@seznam/pocitadlo-libi-se-common",
   "version": "1.1.0",
   "description": "Shared resources related to integration libraries for the \"Líbí se\" social plugin button by Seznam.cz.",
-  "main": "index.js",
+  "module": "./esm/index.js",
+  "main": "./cjs/index.js",
   "type": "module",
+  "types": "./esm/index.d.ts",
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./cjs/index.js"
+  },
   "scripts": {
-    "build": "rm -rf dist/ && npm run compile && cp LICENSE package.json pocitadlolibise.css README.md dist/",
-    "compile": "tsc --project .",
+    "build": "rm -rf dist/ && npm run compile:esm && npm run compile:cjs && cp LICENSE package.json pocitadlolibise.css README.md dist/",
+    "compile:esm": "tsc --outDir ./dist/esm/ --project .",
+    "compile:cjs": "tsc --outDir ./dist/cjs/ --module CommonJS --target ES5 --project .",
     "test": "eslint . --ext .ts",
     "check-uncommitted": "git diff --exit-code >/dev/null && git diff --cached --exit-code >/dev/null",
     "prepublishOnly": "echo 'Use npm run publish-package' && exit 1",
