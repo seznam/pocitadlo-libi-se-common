@@ -9,3 +9,7 @@ integration helper for some platform.
 Some useful links:
 
 [Integration documentation](http://pocitadlolibise.seznam.cz/documentation/Integration.md)
+
+[WordPress plugin](https://github.com/jurca/pocitadlo-libi-se-wordpress)
+
+[React component](https://github.com/seznam/pocitadlo-libi-se-react)
