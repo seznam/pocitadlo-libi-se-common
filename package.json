@@ -17,7 +17,7 @@
     "test": "eslint . --ext .ts",
     "check-uncommitted": "git diff --exit-code >/dev/null && git diff --cached --exit-code >/dev/null",
     "prepublishOnly": "echo 'Use npm run publish-package' && exit 1",
-    "publish-package": "npm run check-uncommitted && npm run build && git push && git push --tags && npm publish dist --ignore-scripts --access public"
+    "publish-package": "npm run check-uncommitted && npm run build && git push && git push --tags && cd dist/ && npm publish --ignore-scripts --access public && cd .."
   },
   "repository": {
     "type": "git",
