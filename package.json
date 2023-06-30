@@ -1,6 +1,6 @@
 {
   "name": "@seznam/pocitadlo-libi-se-common",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Shared resources related to integration libraries for the \"Líbí se\" social plugin button by Seznam.cz.",
   "module": "./esm/index.js",
   "main": "./cjs/index.cjs",
